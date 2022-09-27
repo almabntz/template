@@ -1,6 +1,37 @@
+/*This is the body that holds all of my components*/
 .App {
   text-align: center;
 }
+
+
+.Sightings-Management {
+  text-align: center;
+}
+
+
+.Species-Management{
+  text-align: center;
+}
+
+.Individuals-Management{
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .App-logo {
   height: 40vmin;

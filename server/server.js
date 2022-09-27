@@ -15,41 +15,58 @@ app.get('/', (req, res) => {
   res.json({ message: 'Hello from My template ExpressJS' });
 });
 
-// create the get request
-//get for student API
-app.get('/api/students', cors(), async (req, res) => {
-  // const STUDENTS = [
 
-  //     { id: 1, firstName: 'Lisa', lastName: 'Lee' },
-  //     { id: 2, firstName: 'Eileen', lastName: 'Long' },
-  //     { id: 3, firstName: 'Fariba', lastName: 'Dadko' },
-  //     { id: 4, firstName: 'Cristina', lastName: 'Rodriguez' },
-  //     { id: 5, firstName: 'Andrea', lastName: 'Trejo' },
-  // ];
-  // res.json(STUDENTS);
+//get for species
+app.get('/api/species', cors(), async (req, res) => {
   try {
-    const { rows: students } = await db.query('SELECT * FROM students');
-    res.send(students);
+    const { rows: species } = await db.query('SELECT * FROM species');
+    res.send(species);
   } catch (e) {
     return res.status(400).json({ e });
   }
 });
 
-// create the POST request
-//post for students
-app.post('/api/students', cors(), async (req, res) => {
-  const newUser = {
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-  };
-  console.log([newUser.firstname, newUser.lastname]);
-  const result = await db.query(
-    'INSERT INTO students(firstname, lastname) VALUES($1, $2) RETURNING *',
-    [newUser.firstname, newUser.lastname],
-  );
-  console.log(result.rows[0]);
-  res.json(result.rows[0]);
+
+//post for species
+// app.post('/api/species', cors(), async (req, res) => {
+//   const newUser = {
+//     firstname: req.body.firstname,
+//     lastname: req.body.lastname,
+//   };
+//   console.log([newUser.firstname, newUser.lastname]);
+//   const result = await db.query(
+//     'INSERT INTO students(firstname, lastname) VALUES($1, $2) RETURNING *',
+//     [newUser.firstname, newUser.lastname],
+//   );
+//   console.log(result.rows[0]);
+//   res.json(result.rows[0]);
+// });
+
+//GET for individuals
+app.get('/api/individuals', cors(), async (req, res) => {
+  try {
+    const { rows: individuals } = await db.query('SELECT * FROM individuals');
+    res.send(individuals);
+  } catch (e) {
+    return res.status(400).json({ e });
+  }
 });
+
+//GET for sightings
+app.get('/api/sightings', cors(), async (req, res) => {
+  try {
+    const { rows: sightings } = await db.query('SELECT * FROM sightings');
+    res.send(sightings);
+  } catch (e) {
+    return res.status(400).json({ e });
+  }
+});
+
+
+
+
+
+
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
