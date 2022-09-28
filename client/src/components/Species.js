@@ -71,7 +71,7 @@ useEffect(() => {
  );
 
 
- // VVV this closing bracker is for const Species!!
+ // VVV this closing bracket is for const Species!!
 };
 
 export default Species;
