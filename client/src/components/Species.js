@@ -12,14 +12,14 @@ const Species = () => {
         scientific_name: "",
         population: "",
         conservation_status: "",
-        created_on: ""
+        created_on: "" 
     });
     const set = (common_name) =>{
         return ({target: {value} }) => {
             setNewSpecies((originalValues) => ({
                 ...originalValues,
                 [common_name]: value,
-            })),
+            }));
         };
     };
 
@@ -41,19 +41,37 @@ const handleSubmit = (e) => {
 const getSpecies = async () => {
     const response = await fetch('http://localhost:5000/api/species');
     const species = await response.json ();
+    setSpecies(species);
 };
 
 useEffect(() => {
     getSpecies();
   }, []);
 
-// VVV this closing bracker is for const Species!!
-}
+
 
 //RETURN STATEMEND TO DO'S
 // dont forget to use EVENT HANDLER in onclick for form
 //dont forget to use value in the form 
 //still need to create AddSpecies and pass it back in return
  return (
-    //
- )
+<selection>
+    <h2>Species Management</h2>
+    <ul id="species-list">
+        {species.map((species, index) =>{
+            return(
+                <li key={index}>
+                    common_name: {species.common_name}, scientific_name: {species.common_name} 
+                    <button type="button">EDIT</button>
+                </li>
+            );
+        })};
+    </ul>
+</selection>
+ );
+
+
+ // VVV this closing bracker is for const Species!!
+};
+
+export default Species;

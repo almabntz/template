@@ -1,6 +1,8 @@
 /*This is the body that holds all of my components*/
 .App {
   text-align: center;
+  display:flex;
+  align-items: center;
 }
 
 
@@ -10,7 +12,9 @@
 
 
 .Species-Management{
-  text-align: center;
+  /* text-align: left; */
+  background-color: pink;
+  margin-left:2em;
 }
 
 .Individuals-Management{
