@@ -1,42 +1,71 @@
-// import { useEffect, useState } from "react";
-// import AddSighting from "./AddSightings";
+import React from "react";
+import { useEffect, useState } from "react";
+//import AddSighting from "./AddSightings";
 
-// const Sightings = () => {
-//   const [individuals, setIndividuals] = useState([]);
-//   const [sightings, setSightings] = useState([]);
-//   const getIndividuals = async () => {
-//     const response = await fetch(`http://localhost:`);
-//     const data = await response.json();
-//     console.log(data);
-//     setIndividuals(data);
-//     filter(data);
-//   };
+//Sightings management
+const Sightings = () => {
+  const [Sightings, setSightings] = useState([]);
+  const [newSightings, setNewSightings] = useState({
+    location: "",
+    date_time: "",
+    nick_name: "",
+    healthy: "",
+  });
+  const set = (nick_name) =>{
+    return ({target: {value} }) => {
+        setNewSpecies((originalValues) => ({
+            ...originalValues,
+            [nick_name]: value,
+        }));
+    };
+};
 
-//   const filter = (data) => {
-//     if (data.length !== 0) {
-//       setSightings(data.filter((individual) => individual.location !== null));
-//     }
-//   };
+//Event handler for adding new sightings from
+//my join table 
+const handleSubmit = (e) => {
+    e.preventDefault();
+    setSightings([...Sightings, newSightings]);
+    setNewSightings({
+        location: "",
+        date_time: "",
+        nick_name: "",
+        healthy: "",
+    });
+}// end of event handler, still inside const sightings
 
-//   useEffect(() => {
-//     getIndividuals();
-//   });
+//fetch from DB
+const getSightings = async () => {
+    const response = await fetch('http://localhost:5000/api/jointable');
+    const jointable = await response.json ();
+    setSightings(jointable)
+};
 
-//   const handleClick = (e) => {
-//     console.log(e.currentTarget.value);
-//   };
+useEffect(() => {
+    getSightings();
+}, []);
 
-//   return (
-//   //
-//     );
+return(
+<selection>
+    <h2>Sightings Management</h2>
+    <ul id="Sightings-list">
+        {Sightings.map((jointable, index) =>{
+            return(
+                <li key={index}>
+                    nick_name: {jointable.nick_name}, location: {jointable.location} 
+                    <button type="button">EDIT</button>
+                </li>
+            );
+        })};
+    </ul>
+</selection>  
+);
+
+//RETURN STATEMEND TO DO'S
+// dont forget to use EVENT HANDLER in onclick for form
+//dont forget to use value in the form 
 
 
-// //RETURN STATEMEND TO DO'S
-// // dont forget to use EVENT HANDLER in onclick for form
-// //dont forget to use value in the form 
+   // VVV this is the closing brace for sightings 
+  };
 
-
-//    // VVV this is the closing brace for sightings 
-//   };
-
-// export default Sightings;
+export default Sightings;

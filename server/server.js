@@ -53,10 +53,10 @@ app.get('/api/individuals', cors(), async (req, res) => {
 });
 
 //GET for sightings
-app.get('/api/sightings', cors(), async (req, res) => {
+app.get('/api/jointable', cors(), async (req, res) => {
   try {
-    const { rows: sightings } = await db.query('SELECT * FROM sightings');
-    res.send(sightings);
+    const { rows: jointable } = await db.query('SELECT * FROM jointable');
+    res.send(jointable);
   } catch (e) {
     return res.status(400).json({ e });
   }
