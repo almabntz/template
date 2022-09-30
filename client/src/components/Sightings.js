@@ -13,7 +13,7 @@ const Sightings = () => {
   });
   const set = (nick_name) =>{
     return ({target: {value} }) => {
-        setNewSpecies((originalValues) => ({
+        setNewSightings((originalValues) => ({
             ...originalValues,
             [nick_name]: value,
         }));
@@ -51,11 +51,11 @@ return(
         {Sightings.map((jointable, index) =>{
             return(
                 <li key={index}>
-                    nick_name: {jointable.nick_name}, location: {jointable.location} 
-                    <button type="button">EDIT</button>
+                    Nick Name: {jointable.nick_name}, Location: {jointable.location} 
+                    
                 </li>
             );
-        })};
+        })}
     </ul>
 </selection>  
 );

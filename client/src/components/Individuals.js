@@ -51,7 +51,7 @@ return(
         {Individuals.map((individuals, index) =>{
             return(
                 <li key={index}>
-                    nick_name: {individuals.nick_name}, seen_on: {individuals.seen_on} 
+                    Nick Name: {individuals.nick_name}, Seen On: {individuals.seen_on} 
                     <button type="button">EDIT</button>
                 </li>
             );

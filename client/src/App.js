@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       
       <div className="Sightings-Management"> 
-      sightings here
+      Recent Sightings
         <Sightings />
       </div>
     
@@ -26,7 +26,7 @@ function App() {
     </div>
 
     </div>
-  );
+  )
 }
 
 export default App;

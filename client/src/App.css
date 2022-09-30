@@ -1,13 +1,20 @@
 /*This is the body that holds all of my components*/
 .App {
   text-align: left;
-
+background-color: darkseagreen;
   /* align-items: center; */
-  column-count: 2;
-  column-gap: 10px; 
+  /* column-count: 3;
+  column-gap: 10px;  */
 
   display: flex;
   /* justify-content: space-between; */
+
+
+   /* position:absolute; 
+   top:0;
+  bottom:0; */
+
+
 }
 
 
@@ -33,7 +40,7 @@
   /* justify-content: space-between; */
 
   max-width: 1080 px;
-  alight-self:center;
+  /* alight-self:center; */
 }
 
 .Individuals-Management{
@@ -41,5 +48,5 @@
   margin-left:2em;
   background-color: #61dafb;
   max-width: 1080 px;
-  alight-self:center;
+  /* alight-self:center; */
 }

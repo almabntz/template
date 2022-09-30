@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 
-//get for species
+//GET for species
 app.get('/api/species', cors(), async (req, res) => {
   try {
     const { rows: species } = await db.query('SELECT * FROM species');
@@ -27,7 +27,7 @@ app.get('/api/species', cors(), async (req, res) => {
 });
 
 
-//post for species
+//POST for species
 // app.post('/api/species', cors(), async (req, res) => {
 //   const newUser = {
 //     firstname: req.body.firstname,
