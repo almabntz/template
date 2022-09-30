@@ -51,6 +51,7 @@ return(
         {Individuals.map((individuals, index) =>{
             return(
                 <li key={index}>
+                  <img className="image-size" src={individuals.image}></img>
                     Nick Name: {individuals.nick_name}, Seen On: {individuals.seen_on} 
                     <button type="button">EDIT</button>
                 </li>

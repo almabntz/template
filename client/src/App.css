@@ -1,27 +1,31 @@
 /*This is the body that holds all of my components*/
 .App {
+  background-image: url(https://cdn.nivoli.com/adventuregamers/images/screenshots/40387/20201219223136_1.jpg) ;
+  background-size:cover;
   text-align: left;
-background-color: darkseagreen;
+  background-color: darkseagreen;
   /* align-items: center; */
   /* column-count: 3;
   column-gap: 10px;  */
-
+  max-width:max-content;
   display: flex;
   /* justify-content: space-between; */
 
 
    /* position:absolute; 
    top:0;
-  bottom:0; */
+  bottom:0;
+  width:fit-content; */
 
-
+ 
 }
 
 
 .Sightings-Management {
   text-align: left;
-  background-color: green;
+  background-color: rgba(48, 91, 59, 0.658);
   column-span:inherit;
+  color: aliceblue;
   /* position:absolute; */
   /* top:0;
   bottom:0; */
@@ -33,20 +37,28 @@ background-color: darkseagreen;
 
 .Species-Management{
  
-  background-color: pink;
+  background-color: rgba(48, 91, 59, 0.658);
   margin-left:2em;
   /* text-align: left;
   display: flex; */
   /* justify-content: space-between; */
-
-  max-width: 1080 px;
+  color: aliceblue;
+  /* max-width: 1080 px; */
   /* alight-self:center; */
 }
 
 .Individuals-Management{
   text-align: left;
   margin-left:2em;
-  background-color: #61dafb;
-  max-width: 1080 px;
+  background-color: rgba(48, 91, 59, 0.658);
+  /* max-width: 1080 px; */
+  color: aliceblue;
   /* alight-self:center; */
 }
+
+.image-size {
+  padding: 10px;
+  max-width: 80px;
+  border-radius: 50%;
+}
+
