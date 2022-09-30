@@ -1,21 +1,10 @@
 /*This is the body that holds all of my components*/
 .App {
   background-image: url(https://cdn.nivoli.com/adventuregamers/images/screenshots/40387/20201219223136_1.jpg) ;
-  background-size:cover;
   text-align: left;
   background-color: darkseagreen;
-  /* align-items: center; */
-  /* column-count: 3;
-  column-gap: 10px;  */
-  max-width:max-content;
   display: flex;
-  /* justify-content: space-between; */
 
-
-   /* position:absolute; 
-   top:0;
-  bottom:0;
-  width:fit-content; */
 
  
 }
@@ -24,7 +13,7 @@
 .Sightings-Management {
   text-align: left;
   background-color: rgba(48, 91, 59, 0.658);
-  column-span:inherit;
+  /* column-span:inherit; */
   color: aliceblue;
   /* position:absolute; */
   /* top:0;

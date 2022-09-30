@@ -16,6 +16,7 @@ const AddSpecies = (props) => {
 
     //function for event, the event is user form entrys
     //you will have to add one for EVERY field in the form entry
+    
 //event handle for edit of common name
     const  handleNameChange = (event) => {
         const commonname = event.target.value;

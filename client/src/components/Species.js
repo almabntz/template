@@ -128,7 +128,7 @@ const deleteSpecies = (deleteSpeciesId) => {
             } else {
                 return(
                     <li key={ specieS.id }>
-                     {specieS.common_name} {specieS.scientific_name} <button type= "button" onClick= {() => {onEdit(specieS)}}>edit</button>   
+                     {specieS.common_name} {specieS.scientific_name} <button type= "button" onClick= {() => {onEdit(specieS)}}>EDIT</button>   
                     </li>
                 )
             }
