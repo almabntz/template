@@ -27,20 +27,28 @@ app.get('/api/species', cors(), async (req, res) => {
 });
 
 
-//POST for species
-// app.post('/api/species', cors(), async (req, res) => {
-//   const newUser = {
-//     firstname: req.body.firstname,
-//     lastname: req.body.lastname,
-//   };
-//   console.log([newUser.firstname, newUser.lastname]);
-//   const result = await db.query(
-//     'INSERT INTO students(firstname, lastname) VALUES($1, $2) RETURNING *',
-//     [newUser.firstname, newUser.lastname],
-//   );
-//   console.log(result.rows[0]);
-//   res.json(result.rows[0]);
-// });
+// POST for species
+app.post('/api/species', cors(), async (req, res) => {
+  const species = {
+    id: req.body.id,
+    common_name: req.body.common_name,
+    scientific_name: req.body.scientific_name,
+    population: req.body.population,
+    conservation_status: req.body.conservation_status,
+    created_on: req.body.created_on,
+  };
+  console.log([species.common_name, species.scientific_name]);
+  try {
+  const addSpecies = await db.query(
+    "INSERT INTO species (common_name, scientific_name) VALUES($1, $2) RETURNING *",
+    [addSpecies.common_name, addSpecies.scientific_name],
+  );
+  console.log(addSpecies);
+  res.json(addSpecies);
+  } catch(e) {
+    return res.status(400).json({e})
+  }
+});
 
 //GET for individuals
 app.get('/api/individuals', cors(), async (req, res) => {

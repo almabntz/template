@@ -91,7 +91,7 @@ const handleConservationChange = (event) => {
                 id="add-common-name"
                 placeholder="Common Name"
                 required
-                value={specieS.common_name}
+                value={specieS.commonname}
                 onChange={handleNameChange}/>
 
                 <label>Scientific Name</label>
@@ -100,7 +100,7 @@ const handleConservationChange = (event) => {
                 id="add-scientific-name"
                 placeholder="Scientific Name"
                 required
-                value={specieS.scientific_name}
+                value={specieS.scientificname}
                 onChange={handleScienceNameChange}/>
 
                 <label>Population</label>
@@ -117,6 +117,7 @@ const handleConservationChange = (event) => {
                 type="text"
                 id="conservation-Status"
                 placeholder="Conservation Status"
+                required
                 value={specieS.conservationstatus}
                 onChange={handleConservationChange}/>
 

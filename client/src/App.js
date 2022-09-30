@@ -1,6 +1,5 @@
 import "./App.css";
 import Sightings from "./components/Sightings"
-//import AddSighting from "./components/AddSightings";
 import Species from "./components/Species";
 import Individuals from "./components/Individuals";
 
